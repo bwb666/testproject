@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private EditText editText;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,TwoActivity.class);
         String message = editText.getText().toString();
         intent.putExtra("EXTRA_MESSAGE",message);
+        Toast.makeText(MainActivity.this,message, Toast.LENGTH_SHORT).show();
         //启动意图
         startActivity(intent);
 
